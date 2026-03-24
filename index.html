@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ᴇᴅɪᴛᴏꝛ ꝛᴀᴊ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script defer src="script.js"></script>
+
+</head>
+
+<body>
+
+<!-- 🔥 LOADER -->
+<div id="loader">Loading...</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>ᴇᴅɪᴛᴏꝛ ꝛᴀᴊ</h1>
+  <p>ʟᴏғɪ ᴇᴅɪᴛᴏʀ • ᴍᴜsɪᴄ ᴄʀᴇᴀᴛᴏʀ • ᴠɪʙᴇs</p>
+</section>
+
+<!-- PROFILE -->
+<section class="profile">
+  <img src="IMG_20260323_213556.jpg" class="avatar">
+  <h2>ꝛᴀᴊ sᴜꝛᴀᴛᴘᴜꝛᴀ</h2>
+
+  <div class="stats">
+    <div><span id="subs">0</span><p>sᴜʙsᴄʀɪʙᴇʀs</p></div>
+    <div><span id="views">0</span><p>ᴠɪᴇᴡs</p></div>
+    <div><span id="videos">0</span><p>ᴠɪᴅᴇᴏs</p></div>
+  </div>
+
+  <a href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ?sub_confirmation=1" 
+  class="subscribe-btn" target="_blank">
+  ♡ sᴜʙsᴄʀɪʙᴇ ɴᴏᴡ ♡
+  </a>
+
+  <!-- 🎧 MUSIC -->
+  <button class="music-btn" onclick="toggleMusic()">🎧</button>
+
+  <!-- 🌙 THEME -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+</section>
+
+<!-- 🔥 TOP VIDEOS -->
+<section class="videos">
+  <h2>🔥 ᴛᴏᴘ ᴠɪᴅᴇᴏs</h2>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/mQGjBsBttLE" allowfullscreen></iframe>
+    <button class="like-btn" onclick="like(this)">❤️</button>
+  </div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/cnVmRi_q0l0" allowfullscreen></iframe>
+    <button class="like-btn" onclick="like(this)">❤️</button>
+  </div>
+
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/OmGzOoHEJbo" allowfullscreen></iframe>
+    <button class="like-btn" onclick="like(this)">❤️</button>
+  </div>
+
+</section>
+
+<!-- 🚀 LATEST VIDEOS -->
+<section class="videos" id="latestVideos">
+  <h2>🚀 ʟᴀᴛᴇsᴛ ᴜᴘʟᴏᴀᴅs</h2>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <h2>ᴍʏ ɢᴀʟʟᴇʀʏ</h2>
+
+  <div class="gallery-grid">
+    <img src="IMG_20260325_014843.jpg">
+    <img src="IMG_20260325_014952.jpg">
+    <img src="IMG_20260325_014910.jpg">
+    <img src="IMG_20260325_014936.jpg">
+  </div>
+</section>
+
+<!-- LINKS -->
+<section class="links">
+
+<h2>🌐 ᴍʏ ʟɪɴᴋs</h2>
+
+<h3>🎬 ʏᴏᴜᴛᴜʙᴇ</h3>
+<a href="https://www.youtube.com/channel/UCXBXbRGKFvyH83jjgCVD2gQ" target="_blank"><i class="fab fa-youtube"></i> ᴇᴅɪᴛᴏꝛ ꝛᴀᴊ</a>
+<a href="https://www.youtube.com/channel/UCmjalb9wNxTd29h_z9VMEXw" target="_blank"><i class="fab fa-youtube"></i> ꝛᴀᴊ ᴇᴅɪᴛs</a>
+<a href="https://www.youtube.com/channel/UCswr44I1vcA58G1g25dxlcg" target="_blank"><i class="fab fa-youtube"></i> ᴅᴊ ꝛᴅx ꝛᴀᴊ</a>
+<a href="https://www.youtube.com/channel/UCErmw6AX2ZRr1bXwjiPDq1A" target="_blank"><i class="fab fa-youtube"></i> ᴠɪʙᴇs sᴛᴀᴛɪᴏɴ</a>
+<a href="https://www.youtube.com/channel/UCUR9I2yPyj6a8Pr90D08l3A" target="_blank"><i class="fab fa-youtube"></i> ꝛᴀᴊ x ʟᴏғɪ</a>
+<a href="https://www.youtube.com/channel/UCyGMwi7wiGbSHrqMyE2cY1w" target="_blank"><i class="fab fa-youtube"></i> ᴅᴊ ᴄʜᴇᴛꝛᴀᴍ</a>
+
+<h3>📱 sᴏᴄɪᴀʟ</h3>
+<a href="https://www.instagram.com/rdx_raaaj" target="_blank"><i class="fab fa-instagram"></i> ɪɴsᴛᴀɢʀᴀᴍ</a>
+<a href="https://www.facebook.com/share/1HMrNnkH1b/" target="_blank"><i class="fab fa-facebook"></i> ғᴀᴄᴇʙᴏᴏᴋ</a>
+<a href="https://x.com/raj_suratpura29" target="_blank"><i class="fab fa-twitter"></i> ᴛᴡɪᴛᴛᴇʀ / x</a>
+<a href="https://www.snapchat.com/add/nobitaxd1" target="_blank"><i class="fab fa-snapchat"></i> sɴᴀᴘᴄʜᴀᴛ</a>
+<a href="https://www.pinterest.com/editor_raj29" target="_blank"><i class="fab fa-pinterest"></i> ᴘɪɴᴛᴇʀᴇsᴛ</a>
+
+<h3>🎧 ᴍᴜsɪᴄ</h3>
+<a href="https://open.spotify.com/user/DjRAj06" target="_blank"><i class="fab fa-spotify"></i> sᴘᴏᴛɪғʏ</a>
+<a href="https://soundcloud.com/DjRAj06" target="_blank"><i class="fab fa-soundcloud"></i> sᴏᴜɴᴅᴄʟᴏᴜᴅ</a>
+
+<h3>💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ</h3>
+<a href="https://github.com/RDX-RAj" target="_blank"><i class="fab fa-github"></i> ɢɪᴛʜᴜʙ</a>
+
+<h3>💼 ᴘʀᴏғᴇssɪᴏɴᴀʟ</h3>
+<a href="https://www.linkedin.com/in/rj29rdx" target="_blank"><i class="fab fa-linkedin"></i> ʟɪɴᴋᴇᴅɪɴ</a>
+
+</section>
+
+</body>
+</html>
