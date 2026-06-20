@@ -1,7 +1,7 @@
 const API_KEY = "AIzaSyDfyMTMLaH29JalcWY4lnii7L0GiTZ5Sfo";
 const CHANNEL_ID = "UCXBXbRGKFvyH83jjgCVD2gQ";
 
-// 🔢 NUMBER FORMAT (SMART)
+// ðŸ”¢ NUMBER FORMAT (SMART)
 function formatNumber(num) {
   num = Number(num);
 
@@ -12,7 +12,7 @@ function formatNumber(num) {
   return num;
 }
 
-// 📊 CHANNEL STATS
+// ðŸ“Š CHANNEL STATS
 async function getStats() {
   try {
     const res = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`);
@@ -27,11 +27,11 @@ async function getStats() {
     document.getElementById("videos").textContent = formatNumber(stats.videoCount);
 
   } catch (e) {
-    console.error("❌ Stats error:", e);
+    console.error("âŒ Stats error:", e);
   }
 }
 
-// 🎯 TOP VIDEOS (SAFE + CLEAN)
+// ðŸŽ¯ TOP VIDEOS (SAFE + CLEAN)
 const videoIds = ["mQGjBsBttLE","cnVmRi_q0l0","OmGzOoHEJbo"];
 
 async function loadTopVideos() {
@@ -50,22 +50,21 @@ async function loadTopVideos() {
 
       const views = formatNumber(stats.viewCount);
       const likes = formatNumber(stats.likeCount);
-      const likes = formatNumber(stats.shareCount);
-      
+
       // duplicate avoid
       if (!videos[index].querySelector(".video-stats")) {
         videos[index].insertAdjacentHTML("beforeend", `
-          <p class="video-stats">👁 ${views} • ❤️ ${likes}</p>
+          <p class="video-stats">ðŸ‘ ${views} â€¢ â¤ï¸ ${likes}</p>
         `);
       }
     });
 
   } catch (e) {
-    console.error("❌ Top videos error:", e);
+    console.error("âŒ Top videos error:", e);
   }
 }
 
-// 🚀 LATEST VIDEOS (FIXED + CLEAN)
+// ðŸš€ LATEST VIDEOS (FIXED + CLEAN)
 async function loadLatestVideos() {
   try {
     const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=6`);
@@ -80,7 +79,7 @@ async function loadLatestVideos() {
         const videoHTML = `
           <div class="video">
             <iframe src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen></iframe>
-            <button class="like-btn">❤️</button>
+            <button class="like-btn">â¤ï¸</button>
           </div>
         `;
 
@@ -96,11 +95,11 @@ async function loadLatestVideos() {
     });
 
   } catch (e) {
-    console.error("❌ Latest error:", e);
+    console.error("âŒ Latest error:", e);
   }
 }
 
-// 🎧 MUSIC CONTROL
+// ðŸŽ§ MUSIC CONTROL
 function toggleMusic(){
   const music = document.getElementById("bgMusic");
   if (!music) return;
@@ -112,7 +111,7 @@ function toggleMusic(){
   }
 }
 
-// 🌙 THEME TOGGLE (SAVE ALSO)
+// ðŸŒ™ THEME TOGGLE (SAVE ALSO)
 function toggleTheme(){
   document.body.classList.toggle("light");
 
@@ -124,7 +123,7 @@ function toggleTheme(){
   }
 }
 
-// 🔥 LOAD SAVED THEME
+// ðŸ”¥ LOAD SAVED THEME
 (function(){
   const saved = localStorage.getItem("theme");
   if (saved === "light") {
@@ -132,14 +131,14 @@ function toggleTheme(){
   }
 })();
 
-// 🔥 LOADER FIX (PERFECT)
+// ðŸ”¥ LOADER FIX (PERFECT)
 window.addEventListener("load", () => {
   setTimeout(() => {
     document.body.classList.add("loaded");
   }, 300); // smooth delay
 });
 
-// 🚀 RUN
+// ðŸš€ RUN
 getStats();
 loadTopVideos();
 loadLatestVideos();
