@@ -50,7 +50,8 @@ async function loadTopVideos() {
 
       const views = formatNumber(stats.viewCount);
       const likes = formatNumber(stats.likeCount);
-
+      const likes = formatNumber(stats.shareCount);
+      
       // duplicate avoid
       if (!videos[index].querySelector(".video-stats")) {
         videos[index].insertAdjacentHTML("beforeend", `
