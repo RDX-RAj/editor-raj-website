@@ -1,7 +1,7 @@
 const API_KEY = "AIzaSyDfyMTMLaH29JalcWY4lnii7L0GiTZ5Sfo";
 const CHANNEL_ID = "UCXBXbRGKFvyH83jjgCVD2gQ";
 
-// ðŸ”¢ NUMBER FORMAT (SMART)
+// 🔢 NUMBER FORMAT (SMART)
 function formatNumber(num) {
   num = Number(num);
 
@@ -12,7 +12,7 @@ function formatNumber(num) {
   return num;
 }
 
-// ðŸ“Š CHANNEL STATS
+// 📊 CHANNEL STATS
 async function getStats() {
   try {
     const res = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`);
@@ -27,11 +27,11 @@ async function getStats() {
     document.getElementById("videos").textContent = formatNumber(stats.videoCount);
 
   } catch (e) {
-    console.error("âŒ Stats error:", e);
+    console.error("❌ Stats error:", e);
   }
 }
 
-// ðŸŽ¯ TOP VIDEOS (SAFE + CLEAN)
+// 🎯 TOP VIDEOS (SAFE + CLEAN)
 const videoIds = ["mQGjBsBttLE","cnVmRi_q0l0","OmGzOoHEJbo"];
 
 async function loadTopVideos() {
@@ -54,17 +54,17 @@ async function loadTopVideos() {
       // duplicate avoid
       if (!videos[index].querySelector(".video-stats")) {
         videos[index].insertAdjacentHTML("beforeend", `
-          <p class="video-stats">ðŸ‘ ${views} â€¢ â¤ï¸ ${likes}</p>
+          <p class="video-stats">👁 ${views} • ❤️ ${likes}</p>
         `);
       }
     });
 
   } catch (e) {
-    console.error("âŒ Top videos error:", e);
+    console.error("❌ Top videos error:", e);
   }
 }
 
-// ðŸš€ LATEST VIDEOS (FIXED + CLEAN)
+// 🚀 LATEST VIDEOS (FIXED + CLEAN)
 async function loadLatestVideos() {
   try {
     const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=6`);
@@ -79,7 +79,7 @@ async function loadLatestVideos() {
         const videoHTML = `
           <div class="video">
             <iframe src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen></iframe>
-            <button class="like-btn">â¤ï¸</button>
+            <button class="like-btn">❤️</button>
           </div>
         `;
 
@@ -95,11 +95,11 @@ async function loadLatestVideos() {
     });
 
   } catch (e) {
-    console.error("âŒ Latest error:", e);
+    console.error("❌ Latest error:", e);
   }
 }
 
-// ðŸŽ§ MUSIC CONTROL
+// 🎧 MUSIC CONTROL
 function toggleMusic(){
   const music = document.getElementById("bgMusic");
   if (!music) return;
@@ -111,7 +111,7 @@ function toggleMusic(){
   }
 }
 
-// ðŸŒ™ THEME TOGGLE (SAVE ALSO)
+// 🌙 THEME TOGGLE (SAVE ALSO)
 function toggleTheme(){
   document.body.classList.toggle("light");
 
@@ -123,7 +123,7 @@ function toggleTheme(){
   }
 }
 
-// ðŸ”¥ LOAD SAVED THEME
+// 🔥 LOAD SAVED THEME
 (function(){
   const saved = localStorage.getItem("theme");
   if (saved === "light") {
@@ -131,14 +131,14 @@ function toggleTheme(){
   }
 })();
 
-// ðŸ”¥ LOADER FIX (PERFECT)
+// 🔥 LOADER FIX (PERFECT)
 window.addEventListener("load", () => {
   setTimeout(() => {
     document.body.classList.add("loaded");
   }, 300); // smooth delay
 });
 
-// ðŸš€ RUN
+// 🚀 RUN
 getStats();
 loadTopVideos();
 loadLatestVideos();
